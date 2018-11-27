@@ -1,7 +1,8 @@
-## Adam's build of st -- simple terminal
-# Mainly used for autobootstrapping my Void Linux rice
+# Adam's build of st – simple terminal
+## Mainly used for autobootstrapping my Void Linux rice
 This build is considered final and not many work is expected to be done on this.
-List of patches
+
+List of patches:
 * vertcenter
 * clipboard
 * scrollback

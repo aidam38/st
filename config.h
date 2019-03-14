@@ -83,7 +83,7 @@ char *termname = "st";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-unsigned int alpha = 0xaa;
+unsigned int alpha = 0xee;
 
 static const char *colorname[] = {
   "#151515", /* base00 */
@@ -149,7 +149,7 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
 static Shortcut shortcuts[] = {
@@ -158,9 +158,9 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ MODKEY,               XK_i,           zoom,           {.f = +1} },
-	{ MODKEY,               XK_o,           zoom,           {.f = -1} },
-	{ MODKEY,               XK_p,           zoomreset,      {.f =  0} },
+	{ MODKEY|ShiftMask,     XK_i,           zoom,           {.f = +1} },
+	{ MODKEY|ShiftMask,     XK_o,           zoom,           {.f = -1} },
+	{ MODKEY|ShiftMask,     XK_p,           zoomreset,      {.f =  0} },
 	{ ControlMask,          XK_c,           clipcopy,       {.i =  0} },
 	{ ControlMask,          XK_v,           selpaste,       {.i =  0} },
 	{ MODKEY,               XK_y,           clippaste,      {.i =  0} },

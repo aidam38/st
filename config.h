@@ -96,8 +96,8 @@ static const char *colorname[] = {
   "#d0d0d0", /* base05 */
   "#505050", /* base03 */
   "#d28445", /* base09 */
-  "#202020", /* base01 */
-  "#303030", /* base02 */
+  "#f4bf75", /* base01 changed to base0A*/
+  "#ffdf75", /* base02 */
   "#b0b0b0", /* base04 */
   "#e0e0e0", /* base06 */
   "#8f5536", /* base0F */
@@ -154,22 +154,21 @@ static MouseShortcut mshortcuts[] = {
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ MODKEY|ControlMask,   XK_k,           kscrollup,      {.i = 2} },
+	{ MODKEY|ControlMask,   XK_j,           kscrolldown,    {.i = 2} },
+	{ MODKEY,               XK_i,           zoom,           {.f = +1} },
+	{ MODKEY,               XK_o,           zoom,           {.f = -1} },
+	{ MODKEY|ShiftMask,     XK_p,           zoomreset,      {.f =  0} },
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ MODKEY|ShiftMask,     XK_i,           zoom,           {.f = +1} },
-	{ MODKEY|ShiftMask,     XK_o,           zoom,           {.f = -1} },
-	{ MODKEY|ShiftMask,     XK_p,           zoomreset,      {.f =  0} },
 	{ ControlMask,          XK_c,           clipcopy,       {.i =  0} },
 	{ ControlMask,          XK_v,           selpaste,       {.i =  0} },
 	{ MODKEY,               XK_y,           clippaste,      {.i =  0} },
-	{ MODKEY,               XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
-	{ MODKEY,               XK_k,           kscrollup,      {.i = 2} },
-	{ MODKEY,               XK_j,           kscrolldown,    {.i = 2} },
-
+	{ MODKEY,               XK_Num_Lock,    numlock,        {.i =  0} }
 };
 
 /*
